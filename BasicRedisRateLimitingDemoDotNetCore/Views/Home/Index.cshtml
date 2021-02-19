@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container">
+    <h1 class="display-4 text-center">Rate-limiting example</h1>
+    <form>
+        <div class="form-group">
+            <p class="text-center lead" for="limit-select">
+                The server will allow sending <b>max 10 API requests within a 10 second window</b>. <br />
+                If you send more than that, all additional requests will be blocked
+            </p>
+            <select id="limit-select" class="form-control">
+                <option value="5">5 requests / 10 seconds</option>
+                <option value="10">10 requests / 10 seconds</option>
+                <option value="15">15 requests / 10 seconds</option>
+                <option value="20">20 requests / 10 seconds</option>
+            </select>
+            <div class="d-flex justify-content-center">
+                <button id="test-button" type="button" class="btn btn-primary">Send</button>
+                <span id="timer" class="p-2 d-none"></span>
+            </div>
+        </div>
+    </form>
+
+    <div class="text-center">
+        <div id="result"></div>
+        <button id="reset-button" type="button" class="btn btn-secondary btn-sm d-none">Clear history</button>
+    </div>
+</div>
