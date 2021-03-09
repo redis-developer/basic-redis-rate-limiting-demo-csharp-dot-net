@@ -18,7 +18,6 @@ namespace BasicRedisRateLimitingDemoDotNetCore
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddOptions();
@@ -31,8 +30,6 @@ namespace BasicRedisRateLimitingDemoDotNetCore
 
             services.Configure<IpRateLimitOptions>
             (Configuration.GetSection("IpRateLimit"));
-            //services.AddSingleton<IIpPolicyStore,MemoryCacheIpPolicyStore>();
-            //services.AddSingleton<IRateLimitCounterStore,MemoryCacheRateLimitCounterStore>();
             services.AddSingleton<IIpPolicyStore, DistributedCacheIpPolicyStore>();
             services.AddSingleton<IRateLimitCounterStore, DistributedCacheRateLimitCounterStore>();
             services.AddSingleton<IRateLimitConfiguration,RateLimitConfiguration>();
@@ -41,10 +38,8 @@ namespace BasicRedisRateLimitingDemoDotNetCore
             services.AddControllersWithViews();
 
             services.AddHttpContextAccessor();
-            //services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
 
@@ -55,7 +50,6 @@ namespace BasicRedisRateLimitingDemoDotNetCore
             else
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 
