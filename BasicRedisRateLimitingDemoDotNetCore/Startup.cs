@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using StackExchange.Redis;
+using System;
 
 namespace BasicRedisRateLimitingDemoDotNetCore
 {
@@ -22,10 +23,25 @@ namespace BasicRedisRateLimitingDemoDotNetCore
         {
             services.AddOptions();
 
+            string redisConnectionUrl = null;
+            var redisEndpointUrl = (Environment.GetEnvironmentVariable("REDIS_ENDPOINT_URL") ?? "127.0.0.1:6379").Split(':');
+            var redisHost = redisEndpointUrl[0];
+            var redisPort = redisEndpointUrl[1];
+
+            var redisPassword = Environment.GetEnvironmentVariable("REDIS_PASSWORD");
+            if (redisPassword != null)
+            {
+                redisConnectionUrl = $"{redisHost}:{redisPort},password={redisPassword}";
+            }
+            else
+            {
+                redisConnectionUrl = $"{redisHost}:{redisPort}";
+            }
+
             services.AddStackExchangeRedisCache(options =>
             {
                 options.InstanceName = "master:";
-                options.ConfigurationOptions = ConfigurationOptions.Parse(string.Format("{0},password={1}", Configuration["Redis:ServerUrl"], Configuration["Redis:Password"]));
+                options.ConfigurationOptions = ConfigurationOptions.Parse(redisConnectionUrl);
             });
 
             services.Configure<IpRateLimitOptions>

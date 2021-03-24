@@ -4,7 +4,7 @@
     "type": "Building Block",
     "contributed_by": "Redis Labs",
     "repo_url": "https://github.com/redis-developer/basic-redis-rate-limiting-demo-csharp-dot-net",
-    "download_url": "https://codeload.github.com/redis-developer/basic-caching-demo-csharpdotnet/zip/master",
+    "download_url": "https://github.com/redis-developer/basic-redis-rate-limiting-demo-csharp-dot-net/archive/refs/heads/master.zip",
     "hosted_url": "",
     "quick_deploy": "true",
     "deploy_buttons": [],
