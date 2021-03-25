@@ -1,22 +1,18 @@
 {
-    "name": "Basic Redis Rate Limiting Demo Golang",
-    "description": "List of top 100 companies",
-    "stack": "container",
-    "repository": "https://github.com/redis-developer/basic-redis-rate-limiting-demo-csharp-dot-net",
-    "logo": "https://redis.io/images/redis-white.png",
-    "keywords": ["golang", "gin", "redis"],
-    "env": {
-      "REDIS_HOST": {
-        "description": "Redis server host",
-        "required": true
-      },
-      "REDIS_PORT": {
-        "description": "Redis server PORT",
-        "required": true
-      },
-      "REDIS_PASSWORD": {
-          "description": "Redis server password",
-          "required": true
-      }
+  "name": "Basic Redis Rate Limiting Demo .Net Core 5",
+  "stack": "container",
+  "env": {
+    "REDIS_ENDPOINT_URL": {
+      "description": "Redis server host:port, ex: 127.0.0.1:6379",
+      "required": true
+    },
+    "REDIS_PASSWORD": {
+      "description": "Redis server password",
+      "required": true
+    },
+    "PORT": {
+      "description": "Public port",
+      "value": 80
     }
   }
+}
