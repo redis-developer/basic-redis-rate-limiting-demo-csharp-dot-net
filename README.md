@@ -47,11 +47,12 @@ more information</a>  </li>
 git clone https://github.com/redis-developer/basic-redis-rate-limiting-demo-csharp-dot-net.git
 ```
 
-#### Write in `appsettings.Development.json` your actual access to Redis:
-    "Redis": {
-        "ServerUrl": "Redis server URI",
-        "Password": "Password to the server"
-      }
+#### Write in environment variable or Dockerfile actual connection to Redis:
+```
+   PORT = "API port"
+   REDIS_ENDPOINT_URL = "Redis server URI"
+   REDIS_PASSWORD = "Password to the server"
+```
 
 #### Run backend
 
