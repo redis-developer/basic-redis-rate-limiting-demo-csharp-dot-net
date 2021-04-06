@@ -1,22 +1,29 @@
 {
-    "app_name": "Redis Rate-Limiting Example in .NetCore 5",
-    "description": "Simple app that demonstrates rate-limiting feature using Redis in  .NetCore 5",
-    "type": "Building Block",
-    "contributed_by": "Redis Labs",
-    "repo_url": "https://github.com/redis-developer/basic-redis-rate-limiting-demo-csharp-dot-net",
-    "download_url": "https://github.com/redis-developer/basic-redis-rate-limiting-demo-csharp-dot-net/archive/refs/heads/master.zip",
-    "hosted_url": "",
-    "quick_deploy": "true",
-    "deploy_buttons": [],
-    "language": ["C#", "JavaScript", "HTML", "CSS"],
-    "redis_commands": ["PEXPIRE", "MULTI", "DEL", "PTTL", "EXEC", "DECR", "INCR"],
-    "redis_features": [],
-    "redis_modules": ["AspNetCoreRateLimit"],
-    "app_image_urls": [
+  "app_name": "Redis Rate-Limiting Example in .NetCore 5",
+  "description": "Simple app that demonstrates rate-limiting feature using Redis in  .NetCore 5",
+  "type": "Building Block",
+  "contributed_by": "Redis Labs",
+  "repo_url": "https://github.com/redis-developer/basic-redis-rate-limiting-demo-csharp-dot-net",
+  "download_url": "https://github.com/redis-developer/basic-redis-rate-limiting-demo-csharp-dot-net/archive/refs/heads/master.zip",
+  "hosted_url": "",
+  "quick_deploy": "true",
+  "deploy_buttons": [
+    {
+      "heroku": "https://heroku.com/deploy?template=https://github.com/redis-developer/basic-redis-rate-limiting-demo-csharp-dot-net"
+    },
+    {
+      "Google": "https://deploy.cloud.run/?git_repo=https://github.com/redis-developer/basic-redis-rate-limiting-demo-csharp-dot-net.git"
+    }
+  ],
+  "language": ["C#"],
+  "redis_commands": ["PEXPIRE", "MULTI", "DEL", "PTTL", "EXEC", "DECR", "INCR"],
+  "redis_features": ["Rate Limiting"],
+  "redis_modules": [],
+  "app_image_urls": [
     "https://github.com/redis-developer/basic-redis-rate-limiting-demo-csharp-dot-net/master/docs/screenshot001.png"
   ],
-    "youtube_url": "",
-    "special_tags": [],
-    "verticals": ["Analitics"],
-    "markdown": "https://github.com/redis-developer/basic-redis-rate-limiting-demo-csharp-dot-net/blob/master/README.md"
-  }
+  "youtube_url": "",
+  "special_tags": [],
+  "verticals": ["Analitics"],
+  "markdown": "https://github.com/redis-developer/basic-redis-rate-limiting-demo-csharp-dot-net/blob/master/README.md"
+}
