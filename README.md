@@ -7,13 +7,13 @@
 
 Show how the redis works with .NetCore 5.
 
-![Front example](docs/preview.png)
+![Front example](https://github.com/redis-developer/basic-redis-rate-limiting-demo-csharp-dot-net/blob/master/docs/preview.png)
 
 # Overview video
 
 Here's a short video that explains the project and how it uses Redis:
 
-[![Watch the video on YouTube](docs/YTThumbnail.png)](https://www.youtube.com/watch?v=_mFWjk7ONa8)
+[![Watch the video on YouTube](https://github.com/redis-developer/basic-redis-rate-limiting-demo-csharp-dot-net/blob/master/docs/YTThumbnail.png)](https://www.youtube.com/watch?v=_mFWjk7ONa8)
 
 # How it works?
 
