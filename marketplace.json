@@ -1,6 +1,6 @@
 {
-  "app_name": "A Rate-Limiting Demo app using .NetCore 5",
-  "description": "A Rate-Limiting Demp app in .NetCore 5 using Redis",
+  "app_name": "A Rate-Limiting Demo app using .Net",
+  "description": "A Rate-Limiting Demp app in .Net using Redis",
   "type": "Building Block",
   "contributed_by": "Redis Labs",
   "repo_url": "https://github.com/redis-developer/basic-redis-rate-limiting-demo-csharp-dot-net",
