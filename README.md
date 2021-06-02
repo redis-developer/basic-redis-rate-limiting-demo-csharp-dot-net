@@ -3,7 +3,7 @@
 </div>
 <div style="height: 150px"></div>
 
-# A Rate Limting Demo app in .NetCore 5 using Redis
+# A Rate Limting Demo app in .Net using Redis
 
 Show how the redis works with .NetCore 5.
 
