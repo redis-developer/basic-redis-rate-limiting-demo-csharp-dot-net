@@ -1,6 +1,6 @@
 {
-  "app_name": "Redis Rate-Limiting Example in .NetCore 5",
-  "description": "Simple app that demonstrates rate-limiting feature using Redis in  .NetCore 5",
+  "app_name": "A Rate-Limiting Demo app using .NetCore 5",
+  "description": "A Rate-Limiting Demp app in .NetCore 5 using Redis",
   "type": "Building Block",
   "contributed_by": "Redis Labs",
   "repo_url": "https://github.com/redis-developer/basic-redis-rate-limiting-demo-csharp-dot-net",
@@ -20,10 +20,10 @@
   "redis_features": ["Rate Limiting"],
   "redis_modules": [],
   "app_image_urls": [
-    "https://github.com/redis-developer/basic-redis-rate-limiting-demo-csharp-dot-net/raw/master/docs/preview.png"
+    "https://raw.githubusercontent.com/redis-developer/basic-redis-rate-limiting-demo-csharp-dot-net/master/docs/preview.png"
   ],
   "youtube_url": "https://www.youtube.com/watch?v=_mFWjk7ONa8",
   "special_tags": [],
   "verticals": ["Analitics"],
-  "markdown": "https://github.com/redis-developer/basic-redis-rate-limiting-demo-csharp-dot-net/raw/master/README.md"
+  "markdown": "https://raw.githubusercontent.com/redis-developer/basic-redis-rate-limiting-demo-csharp-dot-net/master/README.md"
 }
