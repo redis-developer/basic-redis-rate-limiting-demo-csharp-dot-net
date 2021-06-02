@@ -1,5 +1,5 @@
 {
-  "app_name": "A Rate-Limiting Demo app using .Net",
+  "app_name": "A Rate-Limiting Demo app in .Net",
   "description": "A Rate-Limiting Demo app in .Net using Redis",
   "type": "Building Block",
   "contributed_by": "Redis Labs",
