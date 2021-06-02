@@ -9,7 +9,7 @@ Show how the redis works with .NetCore 5.
 
 ## Technical Stack
 
-- Frontend: .Net Core 5
+- Frontend: .Net Core 5, Visual Studio Version 16
 - Backend: Redis
 
 
