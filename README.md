@@ -3,17 +3,15 @@
 </div>
 <div style="height: 150px"></div>
 
-# Basic Redis Rate-limiting Demo .NetCore 5
+# A Rate Limting Demo app in .NetCore 5 using Redis
 
 Show how the redis works with .NetCore 5.
-
-![Front example](https://github.com/redis-developer/basic-redis-rate-limiting-demo-csharp-dot-net/raw/master/docs/preview.png)
 
 # Overview video
 
 Here's a short video that explains the project and how it uses Redis:
 
-[![Watch the video on YouTube](https://github.com/redis-developer/basic-redis-rate-limiting-demo-csharp-dot-net/raw/master/docs/YTThumbnail.png)](https://www.youtube.com/watch?v=_mFWjk7ONa8)
+[![Watch the video on YouTube](https://raw.githubusercontent.com/redis-developer/basic-redis-rate-limiting-demo-csharp-dot-net/master/docs/YTThumbnail.png)](https://www.youtube.com/watch?v=_mFWjk7ONa8)
 
 # How it works?
 
