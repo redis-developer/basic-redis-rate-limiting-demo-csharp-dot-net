@@ -39,13 +39,11 @@ namespace BasicRedisRateLimitingDemoDotNetCore
             }
 
             services.AddStackExchangeRedisCache(options =>
-            {
-                options.InstanceName = "master:";
+            {                
                 options.ConfigurationOptions = ConfigurationOptions.Parse(redisConnectionUrl);
             });
 
-            services.Configure<IpRateLimitOptions>
-            (Configuration.GetSection("IpRateLimit"));
+            services.Configure<IpRateLimitOptions>(Configuration.GetSection("IpRateLimit"));
             services.AddSingleton<IIpPolicyStore, DistributedCacheIpPolicyStore>();
             services.AddSingleton<IRateLimitCounterStore, DistributedCacheRateLimitCounterStore>();
             services.AddSingleton<IRateLimitConfiguration,RateLimitConfiguration>();

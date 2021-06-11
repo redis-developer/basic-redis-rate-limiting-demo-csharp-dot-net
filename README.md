@@ -3,20 +3,18 @@
 </div>
 <div style="height: 150px"></div>
 
-# Rate Limting app in .Net using Redis
+# Rate Limiting app in .NET using Redis
 
-Show how the redis works with .NetCore 5.
+This demo shows how how to use Redis in .NET 5 to implement IP Rate limiting to prevent excessive calls to your app from a single client.
 
 ## Technical Stack
 
-- Frontend: .Net Core 5, Visual Studio Version 16
-- Backend: Redis
+- Frontend: ASP.NET Core MVC
+- Backend: ASP.NET Core MVC / Redis
 
+## How it works?
 
-
-# How it works?
-
-## 1. How the data is stored:
+### 1. How the data is stored:
 
 - New responses are added key-ip: `SETNX your_ip:PING limit_amount`
 
@@ -27,7 +25,7 @@ Show how the redis works with .NetCore 5.
   - E.g `EXPIRE 127.0.0.1:PING 1000`
     <a href="https://redis.io/commands/expire">more information</a>
 
-## 2. How the data is accessed:
+### 2. How the data is accessed:
 
 - Next responses are get bucket: `GET your_ip:PING`
 
@@ -39,7 +37,9 @@ Show how the redis works with .NetCore 5.
   - E.g `DECRBY 127.0.0.1:PING 1`
     <a href="https://redis.io/commands/decrby">more information</a>
 
-##### Code used for configuring rate limiting
+#### Code used for configuring rate limiting
+
+When configuring constructing our app's middleware in Startup.cs, we initialize the cache client and inject it into our services. We then pull from the configuration the `IpRateLimit` section, and use that as the configuration for `IpRateLimitOptions`
 
 ```C#
 using AspNetCoreRateLimit;
@@ -47,12 +47,10 @@ using AspNetCoreRateLimit;
 
 services.AddStackExchangeRedisCache(options =>
 {
-    options.InstanceName = "master:";
     options.ConfigurationOptions = ConfigurationOptions.Parse(redisConnectionUrl);
 });
 
-services.Configure<IpRateLimitOptions>
-(Configuration.GetSection("IpRateLimit"));
+services.Configure<IpRateLimitOptions>(Configuration.GetSection("IpRateLimit"));
 services.AddSingleton<IIpPolicyStore, DistributedCacheIpPolicyStore>();
 services.AddSingleton<IRateLimitCounterStore, DistributedCacheRateLimitCounterStore>();
 services.AddSingleton<IRateLimitConfiguration,RateLimitConfiguration>();
@@ -60,6 +58,27 @@ services.AddSingleton<IRateLimitConfiguration,RateLimitConfiguration>();
 //...
 app.UseIpRateLimiting();
 ```
+
+The `IpRateLimit` section is from the `appsettings.json` file:
+
+```json
+"IpRateLimit": {
+  "EnableEndpointRateLimiting": true,
+  "StackBlockedRequests": false,
+  "RealIPHeader": "X-Real-IP",
+  "ClientIdHeader": "X-ClientId",
+  "HttpStatusCode": 429,
+  "GeneralRules": [
+    {
+      "Endpoint": "*:/api/*",
+      "Period": "10s",
+      "Limit": 10
+    }
+  ]
+}
+```
+
+This section dictates the period the path which limitations will be applied to, `Endpoint`, the period over which restrictions are considered, `Period`, and the Limit for the number of requests permitted in that period `Limit`
 
 ---
 
@@ -72,8 +91,7 @@ git clone https://github.com/redis-developer/basic-redis-rate-limiting-demo-csha
 #### Write in environment variable or Dockerfile actual connection to Redis:
 
 ```
-   PORT = "API port"
-   REDIS_ENDPOINT_URL = "Redis server URI"
+   REDIS_ENDPOINT_URL = "Redis server URI:PORT"
    REDIS_PASSWORD = "Password to the server"
 ```
 
@@ -83,7 +101,7 @@ git clone https://github.com/redis-developer/basic-redis-rate-limiting-demo-csha
 dotnet run
 ```
 
-Static сontent runs automatically with the backend part.
+Static content runs automatically with the backend part.
 
 ## Try it out
 
