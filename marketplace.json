@@ -1,6 +1,6 @@
 {
-  "app_name": "Rate-Limiting app in .Net",
-  "description": "Rate-Limiting app in .Net using Redis",
+  "app_name": "Rate-Limiting app in .NET",
+  "description": "Rate-Limiting app in .NET using Redis",
   "type": "Building Block",
   "contributed_by": "Redis Labs",
   "repo_url": "https://github.com/redis-developer/basic-redis-rate-limiting-demo-csharp-dot-net",
