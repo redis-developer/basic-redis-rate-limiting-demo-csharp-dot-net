@@ -2,7 +2,7 @@
   "app_name": "Rate-Limiting app in .NET",
   "description": "Rate-Limiting app in .NET using Redis",
   "type": "Building Block",
-  "contributed_by": "Redis Labs",
+  "contributed_by": "Redis",
   "repo_url": "https://github.com/redis-developer/basic-redis-rate-limiting-demo-csharp-dot-net",
   "preview_image_url": "https://raw.githubusercontent.com/redis-developer/basic-redis-rate-limiting-demo-csharp-dot-net/master/images/app_preview_image.png",
   "download_url": "https://github.com/redis-developer/basic-redis-rate-limiting-demo-csharp-dot-net/archive/refs/heads/master.zip",
@@ -16,15 +16,29 @@
       "Google": "https://deploy.cloud.run/?git_repo=https://github.com/redis-developer/basic-redis-rate-limiting-demo-csharp-dot-net.git"
     }
   ],
-  "language": ["C#"],
-  "redis_commands": ["PEXPIRE", "MULTI", "DEL", "PTTL", "EXEC", "DECR", "INCR"],
-  "redis_features": ["Rate Limiting"],
-  "redis_modules": [],
+  "language": [
+    "C#"
+  ],
+  "redis_commands": [
+    "PEXPIRE",
+    "MULTI",
+    "DEL",
+    "PTTL",
+    "EXEC",
+    "DECR",
+    "INCR"
+  ],
+  "redis_use_cases": [
+    "Rate Limiting"
+  ],
+  "redis_features": [],
   "app_image_urls": [
     "https://raw.githubusercontent.com/redis-developer/basic-redis-rate-limiting-demo-csharp-dot-net/master/docs/preview.png"
   ],
   "youtube_url": "https://www.youtube.com/watch?v=_mFWjk7ONa8",
   "special_tags": [],
-  "verticals": ["Others"],
+  "verticals": [
+    "Others"
+  ],
   "markdown": "https://raw.githubusercontent.com/redis-developer/basic-redis-rate-limiting-demo-csharp-dot-net/master/README.md"
 }
